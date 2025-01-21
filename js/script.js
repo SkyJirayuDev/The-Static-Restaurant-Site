@@ -18,6 +18,13 @@
     targetElem.innerHTML = html;
   }
 
+  // ฟังก์ชันแทนที่ค่าในเทมเพลต {{propName}} ด้วย propValue
+  function insertProperty(string, propName, propValue) {
+    var propToReplace = "{{" + propName + "}}";
+    string = string.replace(new RegExp(propToReplace, "g"), propValue);
+    return string;
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     // STEP 0: เริ่มต้นโหลดหน้า
     showLoading("#main-content");
