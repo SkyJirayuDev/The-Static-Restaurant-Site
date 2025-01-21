@@ -5,6 +5,19 @@
   var allCategoriesUrl =
     "https://coursera-jhu-default-rtdb.firebaseio.com/categories.json";
 
+  // ฟังก์ชันแสดง loading
+  function showLoading(selector) {
+    var html = "<div class='text-center'>";
+    html += "<img src='images/ajax-loader.gif'></div>";
+    insertHtml(selector, html);
+  }
+
+  // ฟังก์ชันแทรก HTML
+  function insertHtml(selector, html) {
+    var targetElem = document.querySelector(selector);
+    targetElem.innerHTML = html;
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     // STEP 0: เริ่มต้นโหลดหน้า
     showLoading("#main-content");
